@@ -22,8 +22,7 @@
     <div id="container2">
         <h3>How to use:</h3>
         <ol>
-            <li class="removeForOnboard"><a href="https://addons.mozilla.org/en-GB/firefox/addon/lori/" target="_blank">Get it for Firefox</a></li>
-            <li class="removeForOnboard"><a href="" target="_blank">Get it for Chrome</a></li>
+            <li class="removeForOnboard"><a href="https://addons.mozilla.org/en-GB/firefox/addon/lori/" target="_blank">Get it for Firefox</a> or <a href="" target="_blank">for Chrome</a></li>
             <li>Use the mouse to select/highlight the confusing text or character</li>
             <li>Right click and select "Lori"<br><img src="imgs/contextMenu.png"></li>
             <li>Look to the top left of your screen and note the highlighted characters<br><img src="imgs/message.png"></li>
