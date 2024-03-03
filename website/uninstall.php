@@ -44,6 +44,9 @@
             </div>
         </form>
     </div>
+    <div>
+        Didn't mean to uninstall? Reinstall for <a href="https://addons.mozilla.org/en-GB/firefox/addon/lori/" target="_blank">firefox</a> or <a href="https://chromewebstore.google.com/detail/lori/cbafpdnfopladkkgjkmhnadpmfajbnag" target="_blank">chrome</a>.
+    </div>
 </body>
 
 </html>
