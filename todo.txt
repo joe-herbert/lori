@@ -1,0 +1,1 @@
+Clicking toolbar icon performs lori on selection if there is a selection, else perform lori with "No Selection"
