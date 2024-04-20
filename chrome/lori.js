@@ -14,7 +14,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     (async () => {
         try {
             await chrome.scripting.executeScript({
-                target: {tabId: tab.id},
+                target: { tabId: tab.id },
                 function: add,
                 args: [{ message: m }],
             });
@@ -28,16 +28,20 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 function add(params) {
     let m = params.message;
     if (document.getElementsByClassName("loriMessage").length !== 0) {
-        [].forEach.call(document.getElementsByClassName("loriMessage"), function(el) {
-            el.style.left = "-400px";
-            setTimeout(function() {
-                document.getElementsByTagName("body")[0].removeChild(el);
-            }, 1000);
-        });
+        [].forEach.call(
+            document.getElementsByClassName("loriMessage"),
+            function (el) {
+                el.style.left = "-400px";
+                setTimeout(function () {
+                    document.getElementsByTagName("body")[0].removeChild(el);
+                }, 1000);
+            }
+        );
     }
     var a = document.createElement("div");
     a.classList.add("loriMessage");
-    a.style = "position: fixed; top: 10px; left: -400px; transition: left 1s; max-width: 350px; background-color: white; color: black; box-shadow: black 0px 0px 10px -5px; border-radius: 5px; padding: 10px; font-family: Georgia; letter-spacing: 2px; cursor: pointer;line-height: initial; font-size: 36px; height: auto; word-break: break-word; text-align: center; z-index: 99999999999; max-height: 100vh; max-height: calc(100vh - 20px); overflow: auto;";
+    a.style =
+        "position: fixed; top: 10px; left: -400px; transition: left 1s; max-width: 350px; background-color: white; color: black; box-shadow: black 0px 0px 10px -5px; border-radius: 5px; padding: 10px; font-family: Georgia; letter-spacing: 2px; cursor: pointer;line-height: initial; font-size: 36px; height: auto; word-break: break-word; text-align: center; z-index: 99999999999; max-height: 100vh; max-height: calc(100vh - 20px); overflow: auto;";
     a.innerHTML = m;
 
     var mouseover = false;
@@ -45,7 +49,7 @@ function add(params) {
 
     a.addEventListener("click", () => {
         a.style.left = "-400px";
-        setTimeout(function() {
+        setTimeout(function () {
             document.getElementsByTagName("body")[0].removeChild(a);
         }, 1000);
     });
@@ -56,20 +60,20 @@ function add(params) {
         mouseover = false;
         if (timeout) {
             a.style.left = "-400px";
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementsByTagName("body")[0].removeChild(a);
             }, 1000);
         }
     });
     document.getElementsByTagName("body")[0].appendChild(a);
-    setTimeout(function() {
+    setTimeout(function () {
         a.style.left = "10px";
     }, 500);
-    setTimeout(function() {
+    setTimeout(function () {
         timeout = true;
         if (!mouseover) {
             a.style.left = "-400px";
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementsByTagName("body")[0].removeChild(a);
             }, 1000);
         }
@@ -83,7 +87,7 @@ chrome.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
     switch (reason) {
         case "install":
             await chrome.tabs.create({
-                url: "https://joeherbert.dev/lori/?onboard=true&browser=chrome",
+                url: "https://lori.joeherbert.dev/?onboard=true&browser=chrome",
             });
             break;
         case "update":
@@ -94,4 +98,4 @@ chrome.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
     }
 });
 
-chrome.runtime.setUninstallURL("https://joeherbert.dev/lori/uninstall");
+chrome.runtime.setUninstallURL("https://lori.joeherbert.dev/uninstall");
