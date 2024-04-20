@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Lori",
-    "version": "1.2",
+    "version": "1.3",
 
     "icons": {
         "48": "icons/icon48.png",
@@ -9,10 +9,12 @@
     },
 
     "description": "Determines if a character is an L or an I or a 1",
-    "content_scripts": [{
-        "matches": ["<all_urls>"],
-        "js": ["loriContent.js"]
-    }],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["loriContent.js"]
+        }
+    ],
 
     "background": {
         "scripts": ["lori.js"]
